@@ -5,21 +5,35 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CryptoCurrency {
+    @JsonProperty("id")
     private String id;
+    @JsonProperty("name")
     private String name;
+    @JsonProperty("symbol")
     private String symbol;
+    @JsonProperty("rank")
     private int rank;
     @JsonProperty("price_usd")
     private double priceUSD;
+    @JsonProperty("price_btc")
     private double priceBTC;
+    @JsonProperty("24h_volume_usd")
     private double usdVolume24h;
+    @JsonProperty("market_cap_usd")
     private double marketCapUSD;
+    @JsonProperty("available_supply")
     private double availableSupply;
+    @JsonProperty("total_supply")
     private double totalSupply;
+    @JsonProperty("max_supply")
     private double maxSupply;
+    @JsonProperty("percent_change_1h")
     private double percentChange1h;
+    @JsonProperty("percent_change_24h")
     private double percentChange24h;
+    @JsonProperty("percent_change_7d")
     private double percentChange7d;
+    @JsonProperty("last_updated")
     private double lastUpdated;
 
     public CryptoCurrency() {
