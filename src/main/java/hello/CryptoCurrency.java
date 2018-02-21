@@ -1,6 +1,7 @@
 package hello;
 
 public class CryptoCurrency {
+    private String id;
     private String name;
     private String symbol;
     private int rank;
