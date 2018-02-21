@@ -51,15 +51,6 @@ public class CryptoCurrencyTableView extends JFrame{
         this.setVisible(true);
     }
 
-    public static void run() {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new CryptoCurrencyTableView();
-            }
-        });
-    }
-
 //    final Class[] columnClass = new Class[] {
 //            String.class, String.class, String.class, Integer.class, Double.class,
 //            Double.class, Double.class, Double.class, Double.class, Double.class,

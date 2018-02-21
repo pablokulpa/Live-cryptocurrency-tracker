@@ -11,12 +11,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+import javax.swing.*;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
-public class Application {
+public class Application extends JFrame {
 
     private static final Logger log = LoggerFactory.getLogger(Application.class);
 
@@ -27,7 +28,12 @@ public class Application {
 
         while (true){
             Thread.sleep(7000);
-            CryptoCurrencyTableView.run();
+            SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    new CryptoCurrencyTableView();
+                }
+            });
         }
     }
 
