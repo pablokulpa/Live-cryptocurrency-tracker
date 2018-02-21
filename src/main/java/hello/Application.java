@@ -26,9 +26,9 @@ public class Application {
     @Bean
     public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
         return args -> {
-            Quote quote = restTemplate.getForObject(
-                    "http://gturnquist-quoters.cfapps.io/api/random", Quote.class);
-            log.info(quote.toString());
+            CryptoCurrency cryptoCurrency = restTemplate.getForObject(
+                    "https://api.coinmarketcap.com/v1/ticker/", CryptoCurrency.class);
+            log.info(cryptoCurrency.getName());
         };
     }
 }
