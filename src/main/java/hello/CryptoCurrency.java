@@ -12,31 +12,39 @@ public class CryptoCurrency {
     @JsonProperty("symbol")
     private String symbol;
     @JsonProperty("rank")
-    private int rank;
+    private Integer rank;
     @JsonProperty("price_usd")
-    private double priceUSD;
+    private Double priceUSD;
     @JsonProperty("price_btc")
-    private double priceBTC;
+    private Double priceBTC;
     @JsonProperty("24h_volume_usd")
-    private double usdVolume24h;
+    private Double usdVolume24h;
     @JsonProperty("market_cap_usd")
-    private double marketCapUSD;
+    private Double marketCapUSD;
     @JsonProperty("available_supply")
-    private double availableSupply;
+    private Double availableSupply;
     @JsonProperty("total_supply")
-    private double totalSupply;
+    private Double totalSupply;
     @JsonProperty("max_supply")
-    private double maxSupply;
+    private Double maxSupply;
     @JsonProperty("percent_change_1h")
-    private double percentChange1h;
+    private Double percentChange1h;
     @JsonProperty("percent_change_24h")
-    private double percentChange24h;
+    private Double percentChange24h;
     @JsonProperty("percent_change_7d")
-    private double percentChange7d;
+    private Double percentChange7d;
     @JsonProperty("last_updated")
-    private double lastUpdated;
+    private Double lastUpdated;
 
     public CryptoCurrency() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -55,107 +63,99 @@ public class CryptoCurrency {
         this.symbol = symbol;
     }
 
-    public int getRank() {
+    public Integer getRank() {
         return rank;
     }
 
-    public void setRank(int rank) {
+    public void setRank(Integer rank) {
         this.rank = rank;
     }
 
-    public double getPriceUSD() {
+    public Double getPriceUSD() {
         return priceUSD;
     }
 
-    public void setPriceUSD(double priceUSD) {
+    public void setPriceUSD(Double priceUSD) {
         this.priceUSD = priceUSD;
     }
 
-    public double getPriceBTC() {
+    public Double getPriceBTC() {
         return priceBTC;
     }
 
-    public void setPriceBTC(double priceBTC) {
+    public void setPriceBTC(Double priceBTC) {
         this.priceBTC = priceBTC;
     }
 
-    public double getUsdVolume24h() {
+    public Double getUsdVolume24h() {
         return usdVolume24h;
     }
 
-    public void setUsdVolume24h(double usdVolume24h) {
+    public void setUsdVolume24h(Double usdVolume24h) {
         this.usdVolume24h = usdVolume24h;
     }
 
-    public double getMarketCapUSD() {
+    public Double getMarketCapUSD() {
         return marketCapUSD;
     }
 
-    public void setMarketCapUSD(double marketCapUSD) {
+    public void setMarketCapUSD(Double marketCapUSD) {
         this.marketCapUSD = marketCapUSD;
     }
 
-    public double getAvailableSupply() {
+    public Double getAvailableSupply() {
         return availableSupply;
     }
 
-    public void setAvailableSupply(double availableSupply) {
+    public void setAvailableSupply(Double availableSupply) {
         this.availableSupply = availableSupply;
     }
 
-    public double getTotalSupply() {
+    public Double getTotalSupply() {
         return totalSupply;
     }
 
-    public void setTotalSupply(double totalSupply) {
+    public void setTotalSupply(Double totalSupply) {
         this.totalSupply = totalSupply;
     }
 
-    public double getMaxSupply() {
+    public Double getMaxSupply() {
         return maxSupply;
     }
 
-    public void setMaxSupply(double maxSupply) {
+    public void setMaxSupply(Double maxSupply) {
         this.maxSupply = maxSupply;
     }
 
-    public double getPercentChange1h() {
+    public Double getPercentChange1h() {
         return percentChange1h;
     }
 
-    public void setPercentChange1h(double percentChange1h) {
+    public void setPercentChange1h(Double percentChange1h) {
         this.percentChange1h = percentChange1h;
     }
 
-    public double getPercentChange24h() {
+    public Double getPercentChange24h() {
         return percentChange24h;
     }
 
-    public void setPercentChange24h(double percentChange24h) {
+    public void setPercentChange24h(Double percentChange24h) {
         this.percentChange24h = percentChange24h;
     }
 
-    public double getPercentChange7d() {
+    public Double getPercentChange7d() {
         return percentChange7d;
     }
 
-    public void setPercentChange7d(double percentChange7d) {
+    public void setPercentChange7d(Double percentChange7d) {
         this.percentChange7d = percentChange7d;
     }
 
-    public double getLastUpdated() {
+    public Double getLastUpdated() {
         return lastUpdated;
     }
 
-    public void setLastUpdated(double lastUpdated) {
+    public void setLastUpdated(Double lastUpdated) {
         this.lastUpdated = lastUpdated;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 }

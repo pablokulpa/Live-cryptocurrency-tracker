@@ -26,8 +26,8 @@ public class Application {
         dataRetriever.start();
 
         while (true){
-            Thread.sleep(11000);
-            System.out.println(CryptoCurrencyRepository.getCryptoCurrencies().get(8).getPriceUSD());
+            Thread.sleep(7000);
+            CryptoCurrencyTableView.run();
         }
     }
 
