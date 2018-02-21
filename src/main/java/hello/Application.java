@@ -29,19 +29,4 @@ public class Application {
         return builder.build();
     }
 
-    @Bean
-    public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
-        return args -> {
-           ResponseEntity<CryptoCurrency[]> cryptoCurrencies = restTemplate
-                   .getForEntity("https://api.coinmarketcap.com/v1/ticker",CryptoCurrency[].class);
-
-
-           List<CryptoCurrency> cryptoCurrencies1 = Arrays.asList(cryptoCurrencies.getBody());
-
-            System.out.println(cryptoCurrencies1.get(0).getPriceUSD());
-
-                   };
-
-
-    }
 }
