@@ -1,10 +1,11 @@
 package hello;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CryptoCurrencyRepository {
 
-    private static List<CryptoCurrency> cryptoCurrencies;
+    private static List<CryptoCurrency> cryptoCurrencies = new ArrayList<>();
 
 
     public static List<CryptoCurrency> getCryptoCurrencies() {

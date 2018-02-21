@@ -20,13 +20,15 @@ public class Application {
 
     private static final Logger log = LoggerFactory.getLogger(Application.class);
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws InterruptedException {
         SpringApplication.run(Application.class);
-    }
+        DataRetriever dataRetriever = new DataRetriever();
+        dataRetriever.start();
 
-    @Bean
-    public RestTemplate restTemplate(RestTemplateBuilder builder) {
-        return builder.build();
+        while (true){
+            Thread.sleep(11000);
+            System.out.println(CryptoCurrencyRepository.getCryptoCurrencies().get(8).getPriceUSD());
+        }
     }
 
 }
