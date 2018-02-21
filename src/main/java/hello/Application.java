@@ -1,5 +1,6 @@
 package hello;
 
+import com.sun.corba.se.spi.ior.ObjectKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -7,7 +8,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
 
 @SpringBootApplication
 public class Application {
@@ -26,9 +32,16 @@ public class Application {
     @Bean
     public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
         return args -> {
-            CryptoCurrency cryptoCurrency = restTemplate.getForObject(
-                    "https://api.coinmarketcap.com/v1/ticker/", CryptoCurrency.class);
-            log.info(cryptoCurrency.getName());
-        };
+           ResponseEntity<CryptoCurrency[]> cryptoCurrencies = restTemplate
+                   .getForEntity("https://api.coinmarketcap.com/v1/ticker",CryptoCurrency[].class);
+
+
+           List<CryptoCurrency> cryptoCurrencies1 = Arrays.asList(cryptoCurrencies.getBody());
+
+            System.out.println(cryptoCurrencies1.get(0).getPriceUSD());
+
+                   };
+
+
     }
 }

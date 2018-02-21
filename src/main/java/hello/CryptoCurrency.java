@@ -1,9 +1,15 @@
 package hello;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CryptoCurrency {
+    private String id;
     private String name;
     private String symbol;
     private int rank;
+    @JsonProperty("price_usd")
     private double priceUSD;
     private double priceBTC;
     private double usdVolume24h;
@@ -15,6 +21,9 @@ public class CryptoCurrency {
     private double percentChange24h;
     private double percentChange7d;
     private double lastUpdated;
+
+    public CryptoCurrency() {
+    }
 
     public String getName() {
         return name;
@@ -126,5 +135,13 @@ public class CryptoCurrency {
 
     public void setLastUpdated(double lastUpdated) {
         this.lastUpdated = lastUpdated;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
