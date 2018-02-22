@@ -60,10 +60,10 @@ public class CryptoCurrencyController {
     }
 
     public void removeFromTrack(){
-        System.out.println("Select to remove");
         Scanner scanner = new Scanner(System.in);
         String toRemove = scanner.next();
         CryptoCurrencyRepository.getTracksCryptocurrencies().stream().forEach(System.out::println);
+        System.out.println("Select to remove");
 
         if(CryptoCurrencyRepository
                 .getTracksCryptocurrencies()
