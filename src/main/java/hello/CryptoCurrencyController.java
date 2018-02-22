@@ -8,6 +8,7 @@ public class CryptoCurrencyController {
     DataDisplay dataDisplay;
 
     public CryptoCurrencyController(DataRetriever dataRetriever, DataDisplay dataDisplay) {
+        CryptoCurrencyRepository.getTracksCryptocurrencies().add("bitcoin");
         this.dataRetriever = dataRetriever;
         this.dataDisplay = dataDisplay;
     }
@@ -23,7 +24,7 @@ public class CryptoCurrencyController {
 
 
     public String getCommand(){
-        System.out.println("Write command [add,remove,sort] : ");
+        System.out.println("Write command [add,remove] : ");
         Scanner scanner = new Scanner(System.in);
         return scanner.next();
     }
@@ -36,10 +37,6 @@ public class CryptoCurrencyController {
             }
             if(command.equals("remove")){
                 removeFromTrack();
-            }
-
-            if(command.equals("sort")){
-
             }
         }
     }
@@ -64,11 +61,13 @@ public class CryptoCurrencyController {
     }
 
     public void removeFromTrack(){
+
+        CryptoCurrencyRepository.getTracksCryptocurrencies().stream().forEach(System.out::println);
+
+
+        System.out.println("Select to remove");
         Scanner scanner = new Scanner(System.in);
         String toRemove = scanner.next();
-        CryptoCurrencyRepository.getTracksCryptocurrencies().stream().forEach(System.out::println);
-        System.out.println("Select to remove");
-
         if(CryptoCurrencyRepository
                 .getTracksCryptocurrencies()
                 .stream()

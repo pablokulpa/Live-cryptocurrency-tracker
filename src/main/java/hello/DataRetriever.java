@@ -25,8 +25,6 @@ public class DataRetriever extends Thread{
                         .stream().filter(x -> CryptoCurrencyRepository.getTracksCryptocurrencies()
                                 .contains(x.getId())).collect(Collectors.toList()));
 
-                System.out.println("cyc" + CryptoCurrencyRepository.getCommonList());
-
                 Thread.sleep(15000);
             } catch (InterruptedException e) {
                 e.printStackTrace();

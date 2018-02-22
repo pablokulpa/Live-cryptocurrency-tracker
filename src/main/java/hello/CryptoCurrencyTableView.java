@@ -21,7 +21,6 @@ public class CryptoCurrencyTableView extends JPanel{
 
         currencyTableModel = new CurrencyTableModel();
         table = new JTable(currencyTableModel);
-        System.out.println(CryptoCurrencyRepository.getCryptoCurrencies());
         table.setPreferredScrollableViewportSize(new Dimension(1600, 800));
         table.setFillsViewportHeight(true);
 
@@ -32,7 +31,6 @@ public class CryptoCurrencyTableView extends JPanel{
 
     public void refresh(){
 
-        System.out.println("cyceusz");
         table.setModel(new CurrencyTableModel());
         table.setAutoCreateRowSorter(true);
     }
