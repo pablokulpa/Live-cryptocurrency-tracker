@@ -16,7 +16,8 @@ public class CryptoCurrencyController {
         dataRetriever.start();
     }
 
-    public void displayData() {
+    public void displayData() throws InterruptedException {
+        Thread.sleep(5000);
         dataDisplay.start();
     }
 

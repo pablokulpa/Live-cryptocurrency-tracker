@@ -12,6 +12,11 @@ public class DataDisplay extends Thread{
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 JFrame frame = new JFrame("CryptoCurrency table");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -24,10 +29,12 @@ public class DataDisplay extends Thread{
             }
         });
 
+        System.out.println(CryptoCurrencyRepository.getCryptoCurrencies());
+
         while (true) {
             try {
-                Thread.sleep(2000);
-                newContentPane.getCurrencyTableModel().refresh();
+                Thread.sleep(7000);
+                newContentPane.refresh();
 
             } catch (InterruptedException e) {
                 e.printStackTrace();

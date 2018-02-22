@@ -21,12 +21,18 @@ public class CryptoCurrencyTableView extends JPanel{
 
         currencyTableModel = new CurrencyTableModel();
         table = new JTable(currencyTableModel);
+        System.out.println(CryptoCurrencyRepository.getCryptoCurrencies());
         table.setPreferredScrollableViewportSize(new Dimension(1600, 800));
         table.setFillsViewportHeight(true);
 
         JScrollPane scrollPane = new JScrollPane(table);
 
         add(scrollPane);
+    }
+
+    public void refresh(){
+
+        table.setModel(new CurrencyTableModel());
     }
 
     public CurrencyTableModel getCurrencyTableModel() {
@@ -42,6 +48,7 @@ public class CryptoCurrencyTableView extends JPanel{
         };
 
         int tableSize = CryptoCurrencyRepository.getCryptoCurrencies().size();
+
 
         private Object[][] currencies = fillCurrenciesData();
 
