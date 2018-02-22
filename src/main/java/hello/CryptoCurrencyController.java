@@ -22,7 +22,7 @@ public class CryptoCurrencyController {
 
 
     public String getCommand(){
-        System.out.println("Write command [add,remove] : ");
+        System.out.println("Write command [add,remove,sort] : ");
         Scanner scanner = new Scanner(System.in);
         return scanner.next();
     }
@@ -36,9 +36,12 @@ public class CryptoCurrencyController {
             if(command.equals("remove")){
                 removeFromTrack();
             }
+
+            if(command.equals("sort")){
+
+            }
         }
     }
-
 
     public void addToTrack(){
         CryptoCurrencyRepository.getCryptoCurrencies().stream().map(x -> x.getId()).forEach(System.out::println);
