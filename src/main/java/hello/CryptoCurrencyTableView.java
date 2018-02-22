@@ -98,14 +98,6 @@ public class CryptoCurrencyTableView extends JPanel{
     }
 
     public static void createAndShowGUI() {
-        JFrame frame = new JFrame("CryptoCurrency table");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        CryptoCurrencyTableView newContentPane = new CryptoCurrencyTableView();
-        newContentPane.setOpaque(true);
-        frame.setContentPane(newContentPane);
-
-        frame.pack();
-        frame.setVisible(true);
     }
 }
