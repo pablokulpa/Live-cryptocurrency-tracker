@@ -37,6 +37,9 @@ public class CryptoCurrencyController {
             if(command.equals("add")){
                 addToTrack();
             }
+            if(command.equals("remove")){
+                removeFromTrack();
+            }
         }
     }
 
@@ -57,10 +60,8 @@ public class CryptoCurrencyController {
                     .findFirst()
                     .orElse(null) != null)
                 CryptoCurrencyRepository.getTracksCryptocurrencies().add(currency);
+        }
     }
-
-    }
-
 
     public void removeFromTrack(){
         System.out.println("Select to remove");
@@ -68,10 +69,12 @@ public class CryptoCurrencyController {
         String toRemove = scanner.next();
         CryptoCurrencyRepository.getTracksCryptocurrencies().stream().forEach(System.out::println);
 
-        CryptoCurrencyRepository.getTracksCryptocurrencies().stream().filter(x -> x.contains(toRemove)).findFirst();
-
-
-
-
+        if(CryptoCurrencyRepository
+                .getTracksCryptocurrencies()
+                .stream()
+                .filter(x -> x.contains(toRemove))
+                .findFirst().orElse(null)!=null){
+            CryptoCurrencyRepository.getTracksCryptocurrencies().remove(toRemove);
+        }
     }
 }
