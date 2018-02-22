@@ -8,8 +8,13 @@ public class CryptoCurrencyRepository {
     private static List<CryptoCurrency> cryptoCurrencies = new ArrayList<>();
     private static List<String> tracksCryptocurrencies = new ArrayList<>();
 
+    public static List<String> getTracksCryptocurrencies() {
+        return tracksCryptocurrencies;
+    }
 
-
+    public static void setTracksCryptocurrencies(List<String> tracksCryptocurrencies) {
+        CryptoCurrencyRepository.tracksCryptocurrencies = tracksCryptocurrencies;
+    }
 
     public static List<CryptoCurrency> getCryptoCurrencies() {
         return cryptoCurrencies;

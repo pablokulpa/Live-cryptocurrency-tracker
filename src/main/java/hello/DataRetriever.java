@@ -14,11 +14,11 @@ public class DataRetriever extends Thread{
 
         while (true){
             try {
-                Thread.sleep(7000);
                 ResponseEntity<CryptoCurrency[]> cryptoCurrencies = restTemplate
-                        .getForEntity("https://api.coinmarketcap.com/v1/ticker",CryptoCurrency[].class);
+                        .getForEntity("https://api.coinmarketcap.com/v1/ticker/?limit=10",CryptoCurrency[].class);
 
                 CryptoCurrencyRepository.setCryptoCurrencies(Arrays.asList(cryptoCurrencies.getBody()));
+                Thread.sleep(7000);
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
