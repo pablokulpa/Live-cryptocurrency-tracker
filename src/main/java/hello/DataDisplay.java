@@ -2,17 +2,25 @@ package hello;
 
 import javax.swing.*;
 
-public class DataDisplay extends JFrame {
+public class DataDisplay extends Thread{
 
-    public void displayData() throws InterruptedException {
+    @Override
+    public void run() {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new CryptoCurrencyTableView();
+            }
+        });
+
         while (true) {
-            Thread.sleep(7000);
-            SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    new CryptoCurrencyTableView();
-                }
-            });
+            try {
+                Thread.sleep(7000);
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 }
