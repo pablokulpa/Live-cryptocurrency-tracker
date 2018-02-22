@@ -26,14 +26,16 @@ public class Application extends JFrame {
         DataRetriever dataRetriever = new DataRetriever();
         dataRetriever.start();
 
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new CryptoCurrencyTableView();
+            }
+        });
+
         while (true){
             Thread.sleep(7000);
-            SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    new CryptoCurrencyTableView();
-                }
-            });
+
         }
     }
 
