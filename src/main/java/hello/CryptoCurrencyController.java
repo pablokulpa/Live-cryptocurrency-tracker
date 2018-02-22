@@ -1,7 +1,5 @@
 package hello;
 
-import javax.sound.midi.Soundbank;
-import javax.swing.*;
 import java.util.Scanner;
 
 public class CryptoCurrencyController {
@@ -14,12 +12,11 @@ public class CryptoCurrencyController {
         this.dataDisplay = dataDisplay;
     }
 
-    public void getData() throws InterruptedException {
+    public void getData() {
         dataRetriever.start();
     }
 
-
-    public void displayData() throws InterruptedException {
+    public void displayData() {
         dataDisplay.start();
     }
 
@@ -29,7 +26,6 @@ public class CryptoCurrencyController {
         Scanner scanner = new Scanner(System.in);
         return scanner.next();
     }
-
 
     public void handleMenu(){
         while (true){
