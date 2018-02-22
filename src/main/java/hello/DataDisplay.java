@@ -29,7 +29,6 @@ public class DataDisplay extends Thread{
             }
         });
 
-        System.out.println(CryptoCurrencyRepository.getCryptoCurrencies());
 
         while (true) {
             try {

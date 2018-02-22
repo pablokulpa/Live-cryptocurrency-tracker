@@ -32,6 +32,7 @@ public class CryptoCurrencyTableView extends JPanel{
 
     public void refresh(){
 
+        System.out.println("cyceusz");
         table.setModel(new CurrencyTableModel());
         table.setAutoCreateRowSorter(true);
     }
