@@ -1,8 +1,5 @@
 package hello;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,7 +11,6 @@ public class DataRetriever extends Thread{
 
 
     public void run() {
-
 
         while (true){
             try {
