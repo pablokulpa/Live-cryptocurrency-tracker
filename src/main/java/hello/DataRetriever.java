@@ -21,6 +21,12 @@ public class DataRetriever extends Thread{
                         .getForEntity("https://api.coinmarketcap.com/v1/ticker/?limit=10",CryptoCurrency[].class);
                 CryptoCurrencyRepository.setCryptoCurrencies(Arrays.asList(cryptoCurrencies.getBody()));
 
+                CryptoCurrencyRepository.setCommonList(CryptoCurrencyRepository.getCryptoCurrencies()
+                        .stream().filter(x -> CryptoCurrencyRepository.getTracksCryptocurrencies()
+                                .contains(x.getId())).collect(Collectors.toList()));
+
+                System.out.println("cyc" + CryptoCurrencyRepository.getCommonList());
+
                 Thread.sleep(15000);
             } catch (InterruptedException e) {
                 e.printStackTrace();

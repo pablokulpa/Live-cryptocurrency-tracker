@@ -33,6 +33,7 @@ public class CryptoCurrencyTableView extends JPanel{
     public void refresh(){
 
         table.setModel(new CurrencyTableModel());
+        table.setAutoCreateRowSorter(true);
     }
 
     public CurrencyTableModel getCurrencyTableModel() {
@@ -47,7 +48,7 @@ public class CryptoCurrencyTableView extends JPanel{
                 "PercentChange7d", "LastUpdated"
         };
 
-        int tableSize = CryptoCurrencyRepository.getCryptoCurrencies().size();
+        int tableSize = CryptoCurrencyRepository.getCommonList().size();
 
 
         private Object[][] currencies = fillCurrenciesData();
@@ -56,7 +57,7 @@ public class CryptoCurrencyTableView extends JPanel{
             Object[][] currencies = new Object[tableSize][15];
             for (int i = 0; i < tableSize; i++) {
                 List<Object> currencyData = new ArrayList<>();
-                CryptoCurrency currency = CryptoCurrencyRepository.getCryptoCurrencies().get(i);
+                CryptoCurrency currency = CryptoCurrencyRepository.getCommonList().get(i);
                 currencyData.add(currency.getId());
                 currencyData.add(currency.getName());
                 currencyData.add(currency.getSymbol());
